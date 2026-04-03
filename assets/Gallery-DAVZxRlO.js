@@ -1,1 +1,0 @@
-import{t as e}from"./index-DbPPUyfU.js";var t=e();function n(){return console.log(`Ты в Gallery`),(0,t.jsx)(`div`,{children:(0,t.jsx)(`h1`,{children:`Галерея`})})}export{n as default};

@@ -1,0 +1,1 @@
+import{t as e}from"./jsx-runtime-D-oznMWL.js";var t=e();function n(){return console.log(`Ты в About_camp`),(0,t.jsx)(`div`,{children:(0,t.jsx)(`h1`,{children:`О Родничке`})})}export{n as default};

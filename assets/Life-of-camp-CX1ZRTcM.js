@@ -1,1 +1,0 @@
-import{t as e}from"./index-DbPPUyfU.js";var t=e();function n(){return console.log(`Ты в Life-of-camp`),(0,t.jsx)(`div`,{children:(0,t.jsx)(`h1`,{children:`Жизнь лагеря`})})}export{n as default};

@@ -1,29 +1,36 @@
 // import * as React from "react";
 import { Routes, Route} from "react-router-dom";
-import HomePage from "./pages/Home";
-import AboutPage from "./pages/About-camp";
-import LifePage from "./pages/Life-of-camp.tsx";
-import GalleryPage from "./pages/Gallery.tsx";
-import StuffPage from "./pages/Teaching-stuff.tsx";
+import { lazy, Suspense } from "react";
+import PageLoader from "@/components/PageLoader.tsx";
+
+const HomePage = lazy(() => import("./pages/Home"));
+const AboutPage = lazy(() => import("./pages/About-camp"));
+const LifePage = lazy(() => import("./pages/Life-of-camp"));
+const GalleryPage = lazy(() => import("./pages/Gallery"));
+const StuffPage = lazy(() => import("./pages/Teaching-stuff"));
 
 import './App.css'
 import DefaultLayout from "./layouts/DefaultLayout.tsx";
 import HomeLayout from "./layouts/HomeLayout.tsx";
 
+
+
 function App() {
   return (
       <>
-          <Routes>
-              <Route element={<HomeLayout />}>
-                  <Route path="/" element={<HomePage />} />
-              </Route>
-              <Route element={<DefaultLayout />}>
-                  <Route path="/About-camp" element={<AboutPage />} />
-                  <Route path="/Life-of-camp" element={<LifePage />} />
-                  <Route path="/Gallery" element={<GalleryPage />} />
-                  <Route path="/Teaching-stuff" element={<StuffPage />} />
-              </Route>
-          </Routes>
+          <Suspense fallback={<PageLoader />}>
+              <Routes>
+                  <Route element={<HomeLayout />}>
+                      <Route path="/" element={<HomePage />} />
+                  </Route>
+                  <Route element={<DefaultLayout />}>
+                      <Route path="/About-camp" element={<AboutPage />} />
+                      <Route path="/Life-of-camp" element={<LifePage />} />
+                      <Route path="/Gallery" element={<GalleryPage />} />
+                      <Route path="/Teaching-stuff" element={<StuffPage />} />
+                  </Route>
+              </Routes>
+          </Suspense>
       </>
   );
 }

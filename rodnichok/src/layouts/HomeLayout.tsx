@@ -1,5 +1,5 @@
 import { Outlet } from 'react-router'
-import HomeHeader from '../components/HomeHeader.tsx'
+import HomeHeader from '../sections/HomePage/HomeHeader.tsx'
 import Navbar from '../components/Navbar.tsx'
 import Footer from '../components/Footer.tsx'
 

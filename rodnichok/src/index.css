@@ -122,6 +122,8 @@ html {
       Плавный скролл
      */
     scroll-behavior: smooth;
+
+    font-size: 16px;
 }
 
 body {
@@ -223,6 +225,7 @@ svg * {
     --color-hat: #BEB296;
     --color-hatTitle: #5B3807;
     --color-pageTitle: #6D3B09;
+    --color-homeTitle: #D4710E;
 }
 
 @utility comfortaa-300 {
@@ -262,6 +265,39 @@ svg * {
     font-size: clamp(10px, 2.22vw, 32px);
 }
 
+.font__Home-body {
+    position: relative;
+    @apply text-homeTitle comfortaa-700;
+    text-shadow: 4px 4px 5px rgba(0, 0, 0, 0.25);
+    font-size: clamp(15px, 2.97vw, 60px);
+}
+
+.font__Home-body::before {
+    content: attr(data-text);
+    position: absolute;
+    z-index: -1;
+    color: transparent;
+    -webkit-text-stroke: 0.0176em #7c6969;
+}
+
+.font__nav__link {
+    font-weight: 500;
+    font-size: clamp(8px, 1.25vw, 18px);
+
+}
+
+.font__nav__link--selected {
+    color: transparent;
+    background-image: url('@/assets/img/Navbar/holo.jpg');
+    background-position: center;
+    background-size: 100% auto;
+    -webkit-text-stroke: 0.2px rgba(124, 105, 105, 0.88);
+
+    -webkit-background-clip: text;
+    background-clip: text;
+
+}
+
 .nav {
     width: 100%;
     height: clamp(30px, 6.9vw, 100px);
@@ -291,13 +327,13 @@ svg * {
     object-fit: contain;
 }
 
-.nav__link {
+.font__nav__link {
     font-weight: 500;
     font-size: clamp(8px, 1.25vw, 18px);
 
 }
 
-.nav__link--selected {
+.font__nav__link--selected {
     color: transparent;
     background-image: url('@/assets/img/Navbar/holo.jpg');
     background-position: center;
@@ -310,11 +346,25 @@ svg * {
 }
 
 .Home__dividing-strip {
+    display: flex;
+    align-items: center;
     width: 100%;
-    height: clamp(50px, 7.64vw, 150px);
-    background-color: #F7F7F7;
-    border-top: solid 2px #808585;
-    border-bottom: solid 2px #808585;
+    height: clamp(30px, 7.64vw, 150px);
+    background-image: url('@/assets/img/Home/Dividing_strip.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    border-top: solid min(max(1px, 0.139vw), 2px) #808585;
+    border-bottom: solid min(max(1px, 0.139vw), 2px) #808585;
+
+}
+
+.Quote__frame {
+    position: absolute;
+    width: clamp(130px, 32.64vw, 630px);
+    height: auto;
+    right: 20vw;
+    bottom: 15vw;
 }
 
 .Quote__image {
@@ -328,7 +378,27 @@ svg * {
 .Quote__text {
     text-align: left;
     font-weight: 400;
-    font-size: clamp(5px, 1.2vw, 21px);
+    font-size: clamp(4px, 1.2vw, 21px);
+}
+
+.Timetable {
+    position: absolute;
+    text-align: center;
+    color: #000000;
+}
+
+.Timetable__title {
+    font-size: clamp(7px, 1.66vw, 32px);
+    font-weight: 700;
+}
+
+.Timetable__shift {
+    font-size: clamp(5px, 1.39vw, 27px);
+    font-weight: 300;
+}
+
+.Timetable__shift-title {
+    font-weight: 600;
 }
 
 @media (max-width: 1919px) {

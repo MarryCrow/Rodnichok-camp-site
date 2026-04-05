@@ -7,53 +7,47 @@ import logo_Rzd from '@/assets/img/Navbar/Partners_RZD.png'
 function Navbar() {
 
     const getNavClass = ({ isActive } : NavLinkRenderProps) =>
-        `nav__link ${isActive ? 'nav__link--selected' : ''}`;
+        `font__nav__link ${isActive ? 'font__nav__link--selected' : ''}`;
+
+    const navConfig = {
+        leftLogo: {src: logo_Rodnichok, alt: 'Logo Rodnichok'},
+        rightLogo: {src: logo_Rzd, alt: 'Logo Rzd'},
+        links: [
+            { path: '/', label: 'Главная' },
+            { path: '/About-camp', label: 'О лагере' },
+            { path: '/Life-of-camp', label: 'Жизнь «Родничка»' },
+            { path: '/Gallery', label: 'Галерея' },
+            { path: '/Teaching-stuff', label: 'Педсостав' },
+        ]
+    }
 
     return(
         <nav className="nav">
             <ul className="nav__list">
                 <li className="nav__item">
                     <img
-                        src={logo_Rodnichok}
+                        src={navConfig.leftLogo.src}
                         className={'nav__logo'}
-                        alt={'Logo'}
+                        alt={navConfig.leftLogo.alt}
                     />
                 </li>
-                <li className="nav__item">
-                    <NavLink
-                        to="/"
-                        className={getNavClass}
-                    >Главная</NavLink>
-                </li>
-                <li className="nav__item">
-                    <NavLink
-                        to="/about-camp"
-                        className={getNavClass}
-                    >О лагере</NavLink>
-                </li>
-                <li className="nav__item">
-                    <NavLink
-                        to="/life-of-camp"
-                        className={getNavClass}
-                    >Жизнь «Родничка»</NavLink>
-                </li>
-                <li className="nav__item">
-                    <NavLink
-                        to="/Gallery"
-                        className={getNavClass}
-                    >Галерея</NavLink>
-                </li>
-                <li className="nav__item">
-                    <NavLink
-                        to="/teaching-stuff"
-                        className={getNavClass}
-                    >Педсостав</NavLink>
-                </li>
+
+                {navConfig.links.map(({path, label}) => (
+                    <li key={path} className='nav__item'>
+                        <NavLink
+                            to={path}
+                            className={getNavClass}
+                        >
+                            {label}
+                        </NavLink>
+                    </li>
+                ))}
+
                 <li className="nav__item">
                     <img
-                        src={logo_Rzd}
+                        src={navConfig.rightLogo.src}
                         className={'nav__logo'}
-                        alt={'Logo'}
+                        alt={navConfig.rightLogo.alt}
                     />
                 </li>
             </ul>

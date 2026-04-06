@@ -226,6 +226,8 @@ svg * {
     --color-hatTitle: #5B3807;
     --color-pageTitle: #6D3B09;
     --color-homeTitle: #D4710E;
+    --color-locationTitle: #755F06;
+    --color-locationText: #8B7B3B;
 }
 
 @utility comfortaa-300 {
@@ -401,6 +403,19 @@ svg * {
     font-weight: 600;
 }
 
+.bg__strip--gradient {
+    position: absolute;
+    width: 100%;
+    height: auto;
+    background: url("@/assets/img/Home/Home_strip_gradient.png");
+}
+
+.location__border {
+    border: solid min(max(1px, 0.139vw), 2px) #000000;
+    border-radius: 2.08vw;
+    padding: 1vw;
+}
+
 @media (max-width: 1919px) {
 
 }
@@ -409,4 +424,8 @@ svg * {
 
 }
 
-@media (max-width: 767px) {}
+@media (max-width: 767px) {
+    .font__Home-body {
+        text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.25);
+    }
+}

@@ -3,12 +3,18 @@ const ScrollImport = import.meta.glob<{default: string}>(
     { eager: true }
 )
 
-export const ScrollImg: Record<string, string> = Object.fromEntries(
-    Object.entries(ScrollImport).map(([path, module]) => {
+export const ScrollImg = Object.entries(ScrollImport)
+    .map(([path, module]) => {
         const name = path
             .split('/')
             .pop()
             ?.split('.')[0]
-        return [name, module.default]
+            ?? "";
+        return {name, src: module.default}
     })
-)
+    .sort((a, b) => {
+        const aNumber = Number(a.name.replace("Scroll-gallery_photo", ""));
+        const bNumber = Number(b.name.replace("Scroll-gallery_photo", ""));
+
+        return aNumber - bNumber;
+    });

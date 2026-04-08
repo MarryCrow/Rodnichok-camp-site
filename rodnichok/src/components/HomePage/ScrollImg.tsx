@@ -3,9 +3,12 @@ const ScrollImport = import.meta.glob<{default: string}>(
     { eager: true }
 )
 
-export const ScrollImg = Object.fromEntries(
+export const ScrollImg: Record<string, string> = Object.fromEntries(
     Object.entries(ScrollImport).map(([path, module]) => {
-        const name = path.split('/').pop()?.split('.')[0]
+        const name = path
+            .split('/')
+            .pop()
+            ?.split('.')[0]
         return [name, module.default]
     })
-) as Record<string, string>
+)

@@ -261,6 +261,15 @@ svg * {
     font-style: normal;
 }
 
+@utility scrollbar-none {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+
+    &::-webkit-scrollbar {
+        display: none;
+    }
+}
+
 .font__Home-header {
     @apply text-hatTitle text-[32%] comfortaa-700;
     text-shadow: 4px 4px 5px rgba(0, 0, 0, 0.25);

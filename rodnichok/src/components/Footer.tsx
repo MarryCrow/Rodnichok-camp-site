@@ -1,8 +1,14 @@
+import footer_background from "@/assets/img/Common_components/footer_background.png"
+
 function Footer() {
 
     return(
         <div>
-            <h2>Конец</h2>
+            <img
+                src = {footer_background}
+                alt = "footer background"
+                className="w-full h-auto"
+            />
         </div>
     );
 }

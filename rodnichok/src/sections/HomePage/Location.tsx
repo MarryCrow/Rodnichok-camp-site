@@ -11,8 +11,8 @@ export const Location = () => {
                 Где мы находимся?
             </div>
 
-            <section className='grid grid-cols-2 grid-rows-2 w-full'>
-                <div className='flex flex-col w-[30vw] h-fit place-self-center items-center location__border'>
+            <section className='grid grid-cols-2 grid-rows-2 w-full '>
+                <div className='flex flex-col w-[30vw] h-fit self-start justify-self-center items-center location__border'>
                     <p className='text-locationTitle text-center font-bold text-[1.81vw]'>
                         Адрес
                     </p>
@@ -22,10 +22,16 @@ export const Location = () => {
                     </p>
                 </div>
 
-                <div className='flex flex-col h-fit items-center location__border row-span-2 col-start-2'>
+                <div className='flex flex-col h-full aspect-square place-self-center items-center location__border row-span-2 col-start-2'>
+                    <iframe
+                        src="https://yandex.com/map-widget/v1/?ll=57.326235,51.46352&pt=57.316235,51.447352&z=13"
+                        allowFullScreen
+                        className="w-full h-full rounded-2xl border-0"
+                    />
                 </div>
 
-                <div className='grid w-[30vw] place-self-center grid-cols-2 grid-rows-[auto_1fr] gap-1 location__border'>
+                <div
+                    className='grid w-[30vw] place-self-center grid-cols-2 grid-rows-[auto_1fr] gap-1 location__border'>
                     <div className='col-span-2'>
                         <p className='text-locationTitle text-center font-bold text-[1.81vw]'>
                             Управление

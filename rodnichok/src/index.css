@@ -425,6 +425,10 @@ svg * {
     padding: 1vw;
 }
 
+.hidden_element {
+    display: none;
+}
+
 @media (max-width: 1919px) {
 
 }

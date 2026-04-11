@@ -22,18 +22,18 @@ export const Location = () => {
                     </p>
                 </div>
 
-                <div className='flex flex-col h-full aspect-square place-self-center items-center location__border row-span-2 col-start-2'>
+                <div
+                    className='flex flex-col h-full aspect-square place-self-center items-center location__border row-span-2 col-start-2'>
                     <iframe
-                        src="https://yandex.com/map-widget/v1/?ll=57.326235,51.46352&pt=57.316235,51.447352&z=13"
+                        src="https://yandex.ru/map-widget/v1/?um=constructor%3A0d51b63dc6346effc6630cddcd31048c624c5d4198b1818a84bbc52edf9f9fce&amp;source=constructor"
                         allowFullScreen
-                        className="w-full h-full rounded-2xl border-0"
-                    />
+                        className="w-full h-full rounded-2xl border-0" />
                 </div>
 
                 <div
                     className='grid w-[30vw] place-self-center grid-cols-2 grid-rows-[auto_1fr] gap-1 location__border'>
                     <div className='col-span-2'>
-                        <p className='text-locationTitle text-center font-bold text-[1.81vw]'>
+                    <p className='text-locationTitle text-center font-bold text-[1.81vw]'>
                             Управление
                         </p>
                     </div>

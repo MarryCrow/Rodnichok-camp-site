@@ -2,6 +2,7 @@ import { useEffect, useMemo, useRef, useState } from "react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import { motion } from "motion/react";
 
+import {TextStroke} from "@/components/ui/TextStroke.tsx";
 import { ScrollImg } from "@/components/HomePage/ScrollImg.tsx";
 import background_strip from "@/assets/img/Home/Home_strip_gradient.png";
 
@@ -23,20 +24,17 @@ const POSITION_TARGETS: Record<
 
 const SIZE_STYLES: Record<Position, string> = {
     [-2]:
-        "w-[40vw] h-[52vw] sm:w-[30vw] sm:h-[39vw] md:w-[22vw] md:h-[28vw] lg:w-[16vw] lg:h-[21vw] ",
+        "w-[48vw] h-[62.4vw] sm:w-[36vw] sm:h-[46.8vw] md:w-[26.4vw] md:h-[33.6vw] lg:w-[19.2vw] lg:h-[25.2vw] ",
     [-1]:
-        "w-[46vw] h-[60vw] sm:w-[35vw] sm:h-[45vw] md:w-[26vw] md:h-[34vw] lg:w-[19vw] lg:h-[25vw]",
+        "w-[55.2vw] h-[72vw] sm:w-[42vw] sm:h-[54vw] md:w-[31.2vw] md:h-[40.8vw] lg:w-[22.8vw] lg:h-[30vw]",
     [0]:
-        "w-[54vw] h-[69vw] sm:w-[42vw] sm:h-[54vw] md:w-[31vw] md:h-[40vw] lg:w-[22vw] lg:h-[28vw]",
+        "w-[64.8vw] h-[82.8vw] sm:w-[50.4vw] sm:h-[64.8vw] md:w-[37.2vw] md:h-[48vw] lg:w-[26.4vw] lg:h-[33.6vw]",
     [1]:
-        "w-[46vw] h-[60vw] sm:w-[35vw] sm:h-[45vw] md:w-[26vw] md:h-[34vw] lg:w-[19vw] lg:h-[25vw]",
+        "w-[55.2vw] h-[72vw] sm:w-[42vw] sm:h-[54vw] md:w-[31.2vw] md:h-[40.8vw] lg:w-[22.8vw] lg:h-[30vw]",
     [2]:
-        "w-[40vw] h-[52vw] sm:w-[30vw] sm:h-[39vw] md:w-[22vw] md:h-[28vw] lg:w-[16vw] lg:h-[21vw]",
+        "w-[48vw] h-[62.4vw] sm:w-[36vw] sm:h-[46.8vw] md:w-[26.4vw] md:h-[33.6vw] lg:w-[19.2vw] lg:h-[25.2vw]",
 };
 
-// Анимация входа для новых карточек
-// При движении вправо (картинки уходят влево) — новые приходят справа
-// При движении влево (картинки уходят вправо) — новые приходят слева
 const ENTRY_ANIMATION = {
     right: {
         initial: { x: "230%", scale: 0.5, opacity: 0 },      // Старт: справа
@@ -172,16 +170,16 @@ export const ScrollGallery = () => {
     if (totalImages === 0) return null;
 
     return (
-        <section className="relative overflow-hidden">
-            <h2
-                className="font__Home-body mt-[clamp(1px,4vw,80px)] mb-[clamp(1px,3vw,60px)] flex items-center justify-center"
-                data-text="Галерея «Родничка»"
+        <section className="relative overflow-hidden top-0">
+            <TextStroke
+                as="h2"
+                text="Галерея «Родничка»"
+                className="font__Home-body text-[30px] sm:text-[40px] lg:text-[4vw] mt-[clamp(1px,3vw,60px)] mb-[clamp(40px,5vw,80px)] text-center"
             >
                 Галерея «Родничка»
-            </h2>
-
+            </TextStroke>
             <div className="relative mx-auto w-full px-4 sm:px-6 lg:px-10">
-                <div className="relative h-[92vw] sm:h-[62vw] md:h-[46vw] lg:h-[32vw]">
+                <div className="relative h-[80vw] sm:h-[62vw] md:h-[46vw] lg:h-[32vw]">
                     {POSITIONS.map((position) => {
                         const item = positionMap[position];
                         if (!item) return null;
@@ -279,11 +277,10 @@ export const ScrollGallery = () => {
                     </button>
                 </div>
             </div>
-
             <img
                 src={background_strip}
                 alt="background-strip_gradient"
-                className="relative w-full h-auto translate-y-[-1rem] md:translate-y-[-3rem] lg:translate-y-[-5rem] pointer-events-none"
+                className="relative w-full h-auto translate-y-[-1rem] md:translate-y-[-4rem] lg:translate-y-[-8rem] pointer-events-none"
             />
         </section>
     );

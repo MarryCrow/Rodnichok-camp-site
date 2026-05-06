@@ -50,7 +50,7 @@ function Navbar() {
 
     return(
         <>
-            <nav className="nav hidden md:block h-[60px] md:h-[8vw] lg:h-[6vw] ">
+            <nav className="nav hidden md:block md:h-[8vw] lg:h-[6vw] ">
                 <ul className="nav__list">
                         <li className="nav__item">
                         <img

@@ -1,10 +1,11 @@
+import {Common} from "@/sections/AboutCamp/Common.tsx"
+import {Activity} from "@/sections/AboutCamp/Activity.tsx"
 function AboutPage() {
-    console.log("Ты в About_camp");
-
     return(
 
         <div>
-            <h1>О Родничке</h1>
+            <Common/>
+
         </div>
     );
 }

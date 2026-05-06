@@ -5,8 +5,6 @@ import {Location} from "@/sections/HomePage/Location.tsx";
 import HomeHeader from "@/sections/HomePage/HomeHeader.tsx";
 
 function HomePage() {
-    console.log("Ты в Home");
-
     return(
         <>
             <HomeHeader />

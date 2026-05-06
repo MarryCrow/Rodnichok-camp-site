@@ -6,8 +6,8 @@ import Footer from '../components/Footer.tsx'
 export default function HomeLayout() {
     return (
         <>
-            <HomeHeader />
             <Navbar />
+            <HomeHeader />
             <main>
                 <Outlet />
             </main>

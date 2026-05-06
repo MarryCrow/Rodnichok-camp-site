@@ -4,7 +4,6 @@ import { lazy, Suspense } from "react";
 
 import PageLoader from "@/components/PageLoader.tsx";
 import DefaultLayout from "./layouts/DefaultLayout.tsx";
-import HomeLayout from "./layouts/HomeLayout.tsx";
 
 const HomePage = lazy(() => import("./pages/Home"));
 const AboutPage = lazy(() => import("./pages/About-camp"));
@@ -17,10 +16,8 @@ export default function App() {
       <>
           <Suspense fallback={<PageLoader />}>
               <Routes>
-                  <Route element={<HomeLayout />}>
-                      <Route path="/" element={<HomePage />} />
-                  </Route>
                   <Route element={<DefaultLayout />}>
+                      <Route path="/" element={<HomePage />} />
                       <Route path="/About-camp" element={<AboutPage />} />
                       <Route path="/Life-of-camp" element={<LifePage />} />
                       <Route path="/Gallery" element={<GalleryPage />} />

@@ -44,7 +44,7 @@ function HomeHeader() {
                 {/*    alt={'right corner'}*/}
                 {/*    className="absolute right-0 top-0 h-auto w-[37.57%]"*/}
                 {/*/>*/}
-                <TextStroke as="h1" text="Детский оздоровительный лагерь «Родничок»" className="font__Home-header text-center">
+                <TextStroke as="h1" className="font__Home-header text-center">
                     Детский оздоровительный лагерь <br/> «Родничок»
                 </TextStroke>
             </div>

@@ -5,11 +5,11 @@ import path from 'path'
 import svgr from 'vite-plugin-svgr'
 
 export default defineConfig({
+    base: "/Rodnichok-camp-site/",
     plugins: [react(), tailwindcss(), svgr()],
     resolve: {
         alias: {
             '@': path.resolve(__dirname, './src'),
         }
     },
-    base: '/Rodnichok-camp-site/'
 })

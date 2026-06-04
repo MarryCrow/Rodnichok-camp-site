@@ -3,9 +3,9 @@ import {Activity} from "@/sections/AboutCamp/Activity.tsx"
 function AboutPage() {
     return(
 
-        <div>
+        <div className="overflow-hidden">
             <Common/>
-
+            <Activity/>
         </div>
     );
 }

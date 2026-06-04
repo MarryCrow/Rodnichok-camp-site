@@ -7,8 +7,7 @@ export const Location = () => {
         <div className="relative mt-[-8vw] md:mt-[-15vw] lg:mt-[-20vw] xl:mt-[-15vw] mb-20 lg:mb-30">
             <TextStroke
                 as="h2"
-                text="Где мы находимся?"
-                className="font__Home-body text-[30px] sm:text-[40px] lg:text-[4vw] text-center mb-[clamp(40px,5vw,80px)]"
+                className="font__Home-body text-homeTitle w-full text-[30px] sm:text-[40px] lg:text-[4vw] text-center mb-[clamp(40px,5vw,80px)]"
             >
                 Где мы находимся?
             </TextStroke>

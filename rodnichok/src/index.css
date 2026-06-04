@@ -77,8 +77,9 @@
 .font__Home-body {
     position: relative;
     z-index: 2;
-    @apply text-homeTitle comfortaa-700;
-    text-shadow: 4px 4px 5px rgba(0, 0, 0, 0.25);
+    font-family: "Comfortaa", sans-serif;
+    font-weight: 700;
+    text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.25);
 }
 
 /*.font__Home-body::before {*/
@@ -90,20 +91,7 @@
 /*}*/
 
 .font_Stroked {
-    position: relative;
-    z-index: 0;
-}
-
-.font_Stroked::after {
-    content: attr(data-text);
-
-    position: absolute;
-    inset: 0;
-    z-index: -1;
-
-    color: transparent;
     -webkit-text-stroke: 0.0176em #7c6969;
-
 }
 
 .font__nav__link--wide {
@@ -122,6 +110,18 @@
     justify-content: center;
 
     font-weight: 700;
+}
+
+.font__About__main {
+    font-family: Comfortaa, "Comfortaa", sans-serif;
+    font-weight: 500;
+    font-size: clamp(14px, 1.25vw, 24px);
+}
+
+.font__About__description {
+    font-family: Comfortaa, "Comfortaa", sans-serif;
+    font-weight: 300;
+    font-size: clamp(14px, 1.25vw, 24px);
 }
 
 /* масштабируем внешний span */
@@ -377,6 +377,45 @@
 
 .hidden_element {
     display: none;
+}
+
+.about_icon {
+    @apply absolute w-12 h-auto px-2 py-2 rounded-full md:hidden -translate-x-[2rem] -translate-y-[2rem];
+}
+
+.about__text--width {
+    @apply w-[clamp(350px,80vw,760px)] md:w-[clamp(300px,65vw,1200px)] leading-[1.55] text-center;
+    font-family: Comfortaa, "Comfortaa", sans-serif;
+    font-weight: 500;
+    font-size: clamp(14px, 1.25vw, 24px);
+}
+
+.about__image-main {
+    @apply mt-4 lg:mt-8 w-[clamp(350px,80vw,760px)] md:w-[clamp(350px,65vw,1200px)] aspect-[14/9] md:aspect-[18/9] overflow-hidden rounded-2xl shadow-2xl;
+}
+
+.about__description {
+    @apply relative leading-[1.55] max-md:rounded-2xl max-md:border-2 max-md:shadow-md max-md:px-4 max-md:py-4;
+    font-family: Comfortaa, "Comfortaa", sans-serif;
+    font-weight: 500;
+    font-size: clamp(14px, 1.25vw, 24px);
+}
+
+.stroke--gradient {
+    background-image: url("@/assets/img/holo.jpg");
+    background-size: cover;
+    transform: rotate(180deg);
+}
+
+@media (min-width: 768px) {
+    .image--scaled {
+        transition: transform 0.3s ease-out;
+        transform-origin: center;
+    }
+
+    .image--scaled:hover {
+        transform: scale(1.2);
+    }
 }
 
 @media (max-width: 1919px) {

@@ -12,7 +12,7 @@ export const DirectorQuote = () => (
             src={HomeImg['Director']}
             className='absolute hidden md:block
                 bottom-0 left-[10vw]
-                h-[80] w-auto max-h-[90vh]'
+                h-[80vw] w-auto max-h-[90vh]'
             alt={'Director'}
         />
         <img

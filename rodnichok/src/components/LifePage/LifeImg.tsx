@@ -1,5 +1,5 @@
 const LifeImport = import.meta.glob<{default: string}>(
-    '@/assets/img/LifeOfCamp/*.{png,jpg,jpeg}',
+    '@/assets/img/LifeOfCamp/*.{png,jpg,jpeg,JPG,webp}',
     { eager: true }
 )
 

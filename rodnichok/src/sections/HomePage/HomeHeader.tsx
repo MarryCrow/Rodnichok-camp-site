@@ -31,7 +31,7 @@ function HomeHeader() {
                 alt={'Home Header Mobile'}
             />
 
-            <div className="absolute hidden md:flex top-[15%] h-[100px] w-full items-center justify-center">
+            <div className="absolute hidden md:flex top-[18%] h-[100px] w-full items-center justify-center">
 
                 {/*<img*/}
                 {/*    src={hats['Left-down']}*/}

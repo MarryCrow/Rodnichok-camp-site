@@ -71,7 +71,7 @@
 .font__Home-header {
     @apply text-hatTitle comfortaa-700;
     text-shadow: 4px 4px 5px rgba(120, 84, 9, 0.25);
-    font-size: clamp(25px, 2.22vw, 45px);
+    font-size: clamp(32px, 2.22vw, 45px);
 }
 
 .font__Home-body {

@@ -1,0 +1,1 @@
+import{t as e}from"./jsx-runtime-DBS2Xqfh.js";var t=e(),n=({as:e=`span`,children:n,className:r=``})=>(0,t.jsxs)(e,{className:`relative inline-block ${r}`,children:[(0,t.jsx)(`span`,{"aria-hidden":`true`,className:`absolute inset-0 z-[0] text-transparent font_Stroked`,children:n}),(0,t.jsx)(`span`,{className:`relative`,children:n})]});export{n as t};

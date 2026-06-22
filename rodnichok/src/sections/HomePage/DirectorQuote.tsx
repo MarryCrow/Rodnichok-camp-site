@@ -5,19 +5,19 @@ export const DirectorQuote = () => (
     <div className="relative w-full h-[95svh] md:h-screen overflow-hidden">
         <img
             src = {HomeImg['diagonal_background']}
-            className={'absolute w-full h-full object-cover'}
+            className={'absolute w-full h-full object-cover pointer-events-none'}
             alt={'Director_background'}
         />
         <img
             src={HomeImg['Director']}
             className='absolute hidden md:block
                 bottom-0 left-[10vw]
-                h-[80vw] w-auto max-h-[90vh]'
+                h-[80vw] w-auto max-h-[90vh] pointer-events-none'
             alt={'Director'}
         />
         <img
             src={HomeImg['Director-full']}
-            className={'absolute block md:hidden h-[83%] bottom-1 left-5 md:left-[20vw]'}
+            className={'absolute block md:hidden h-[83%] bottom-1 left-5 md:left-[20vw] pointer-events-none'}
             alt={'Director'}
         />
 

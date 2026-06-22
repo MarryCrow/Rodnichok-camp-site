@@ -24,6 +24,8 @@ export default function App() {
                       <Route path="/About-camp" element={<AboutPage />} />
                       <Route path="/Life-of-camp" element={<LifePage />} />
                       <Route path="/Gallery" element={<GalleryPage />} />
+                      <Route path="/Gallery/:year" element={<GalleryPage />} />
+                      <Route path="/Gallery/:year/:albumId" element={<GalleryPage />} />
                       <Route path="/Teaching-stuff" element={<StaffPage />} />
                   </Route>
               </Routes>

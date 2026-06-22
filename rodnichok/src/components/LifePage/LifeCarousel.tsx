@@ -20,7 +20,7 @@ function CampLifeImages({ images, title, onImageClick }: { images: string[]; tit
                     src={shownImages[0]}
                     alt={title}
                     onClick={() => onImageClick(shownImages[0], title)}
-                    className="h-full object-cover"
+                    className="h-full object-cover cursor-pointer"
                     loading="lazy"
                 />
             </div>
@@ -36,7 +36,7 @@ function CampLifeImages({ images, title, onImageClick }: { images: string[]; tit
                             src={image}
                             alt={`${title} (${index+1})`}
                             onClick={() => onImageClick(image, `${title} (${index+1})`)}
-                            className="h-full w-full object-cover"
+                            className="h-full w-full object-cover cursor-pointer"
                             loading="lazy"
                         />
                     </div>
@@ -52,7 +52,7 @@ function CampLifeImages({ images, title, onImageClick }: { images: string[]; tit
                     src={shownImages[0]}
                     alt={`${title} 1`}
                     onClick={() => onImageClick(shownImages[0], `${title} 1`)}
-                    className="h-full w-full object-cover"
+                    className="h-full w-full object-cover cursor-pointer"
                     loading="lazy"
                 />
             </div>
@@ -63,7 +63,7 @@ function CampLifeImages({ images, title, onImageClick }: { images: string[]; tit
                         src={image}
                         alt={`${title} ${index + 2}`}
                         onClick={() => onImageClick(image, `${title} ${index + 2}`)}
-                        className="h-full w-full object-cover"
+                        className="h-full w-full object-cover cursor-pointer"
                         loading="lazy"
                     />
                 </div>
@@ -112,7 +112,11 @@ export function CampLifeCarousel({ modules }: CampLifeCarouselProps ) {
     const [emblaRef, emblaApi] = useEmblaCarousel({
         align: "center",
         loop: true,
-        containScroll: "trimSnaps"
+        containScroll: "trimSnaps",
+
+        watchDrag: () => {
+            return window.matchMedia("(max-width: 767px)").matches;
+        },
     });
 
     const [selectedIndex, setSelectedIndex] = useState(0);
@@ -156,13 +160,13 @@ export function CampLifeCarousel({ modules }: CampLifeCarouselProps ) {
     }, [emblaApi, onSelect]);
 
     return (
-        <section className="relative mx-auto w-full max-w-[1400px] px-4 py-2 md:px-8">
+        <section className="relative mx-auto w-full max-w-[1400px] mb-10 px-4 py-2 md:px-8">
             <div className="absolute inset-x-6 top-1/2 -translate-y-1/2 z-[1] flex flex-row justify-between max-md:hidden">
                 <button
                     type="button"
                     onClick={() => emblaApi?.scrollPrev()}
                     disabled={!canScrollPrev}
-                    className="relative rounded-full bg-white/80 px-5 py-3 font-bold shadow-xl border border-gray-300 transition-transform duration-300 ease-out hover:scale-110 active:scale-[1.2] disabled:cursor-not-allowed disabled:opacity-35 disabled:active:scale-100"
+                    className="relative rounded-full cursor-pointer bg-white/80 px-5 py-3 font-bold shadow-xl border border-gray-300 backdrop-blur-sm transition-transform duration-300 ease-out hover:scale-110 active:scale-[1.2] disabled:cursor-not-allowed disabled:opacity-35 disabled:active:scale-100"
                 >
                     ←
                 </button>
@@ -171,7 +175,7 @@ export function CampLifeCarousel({ modules }: CampLifeCarouselProps ) {
                     type="button"
                     onClick={() => emblaApi?.scrollNext()}
                     disabled={!canScrollNext}
-                    className="relative rounded-full bg-white/80 px-5 py-3 font-bold shadow-xl border border-gray-300 transition-transform duration-300 ease-out hover:scale-110 active:scale-[1.2] disabled:cursor-not-allowed disabled:opacity-35 disabled:active:scale-100"
+                    className="relative rounded-full cursor-pointer bg-white/80 px-5 py-3 font-bold shadow-xl border border-gray-300 backdrop-blur-sm transition-transform duration-300 ease-out hover:scale-110 active:scale-[1.2] disabled:cursor-not-allowed disabled:opacity-35 disabled:active:scale-100"
                 >
                     →
                 </button>
@@ -200,7 +204,7 @@ export function CampLifeCarousel({ modules }: CampLifeCarouselProps ) {
                         className={`h-3 rounded-full transition-all ${
                             selectedIndex === index
                                 ? "w-8 bg-themeOrange"
-                                : "w-3 bg-themeGreen/40"
+                                : "w-3 bg-themeGreen/40 cursor-pointer"
                         }`}
                     />
                 ))}
@@ -214,7 +218,7 @@ export function CampLifeCarousel({ modules }: CampLifeCarouselProps ) {
                     <button
                         type="button"
                         onClick={closeImage}
-                        className="absolute right-5 top-5 rounded-full bg-white/90 px-4 py-2 text-xl font-bold text-black shadow-lg transition hover:scale-110"
+                        className="absolute right-5 top-5 rounded-full cursor-pointer bg-white/90 w-10 h-10 text-xl font-bold text-black shadow-lg transition hover:scale-110"
 
                     >
                         ×

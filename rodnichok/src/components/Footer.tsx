@@ -4,11 +4,15 @@ import footer_background_main from "@/assets/img/Footer/footer_background_main.p
 import footer_background_mobile from "@/assets/img/Footer/footer_background_mobile.png"
 import logo_VK from "@/assets/img/Footer/vk_logo.png"
 
+import {useState} from "react";
+import { PrivacyPolicyModal } from "@/components/PrivacyPolicyModal.tsx";
 
 function Footer() {
 
+    const [isPrivacyModalOpen, setIsPrivacyModalOpen] = useState(false);
+
     return (
-        <div className="relative w-full h-auto">
+        <div className="relative w-full min-h-[370px] tn:min-h-[420px] md:min-h-[300px]">
             <div className="relative w-full hidden md:block overflow-hidden rounded-t-[40px] h-[300px]">
                 <img
                     src={footer_background_main}
@@ -16,7 +20,7 @@ function Footer() {
                     className="w-full h-full object-cover object-bottom"
                 />
             </div>
-            <div className="relative w-full overflow-hidden rounded-t-[40px] h-auto tn:h-[450px] md:hidden">
+            <div className="absolute inset-0 w-full overflow-hidden rounded-t-[40px] md:hidden">
                 <img
                     src={footer_background_mobile}
                     alt="footer background mobile"
@@ -49,9 +53,9 @@ function Footer() {
                             <Icon name="telephone_svg" className="w-6 h-auto [&_*]:stroke-[1]"/>
                             +7 (351) 259-21-07
                         </a>
-                        <a href="mailto:dss-74@mail.ru" className="comfortaa-300 flex gap-1">
+                        <a href="mailto:Rodnichok-camp@mail.ru" className="comfortaa-300 flex gap-1">
                             <Icon name="Email_svg" className="w-6 h-auto [&_*]:stroke-[2]"/>
-                            <p className="underline">dss-74@mail.ru</p>
+                            <p className="underline">Rodnichok-camp@mail.ru</p>
                         </a>
                     </div>
                 </div>
@@ -64,11 +68,23 @@ function Footer() {
                 md:grid md:grid-cols-3 md:items-center md:gap-0
                 text-gray-600 gap-3 pt-5 px-5 md:px-20 text-[12px]
                 tn:pt-8 tn:text-[15px] tn:gap-4">
-                    <p className="md:text-start">© «Родничок», 2026</p>
-                    <a className="md:text-center">Политика конфиденциальности</a>
-                    <p className="md:text-right">Разработано И.П. WxSanyok</p>
+                    <p className="text-start md:text-start">© «Родничок», 2026</p>
+                    <button
+                        type="button"
+                        onClick={() => setIsPrivacyModalOpen(true)}
+                        className="text-start text-grey-200/80 transition hover:text-white underline underline-offset-4 cursor-pointer md:text-center"
+
+                    >
+                        Политика конфиденциальности
+                    </button>
+                    <p className="text-start md:text-right">Разработано И.П. WxSanyok</p>
                 </div>
             </section>
+
+            <PrivacyPolicyModal
+                isOpen={isPrivacyModalOpen}
+                onClose={() => setIsPrivacyModalOpen(false)}
+            />
         </div>
     );
 }

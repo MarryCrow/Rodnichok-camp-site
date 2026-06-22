@@ -140,7 +140,7 @@ export const DesktopScrollGallery = () => {
                         onClick={goToPrev}
                         disabled={isAnimating}
                         aria-label="Предыдущее фото"
-                        className="absolute left-0 top-1/2 z-40 -translate-y-1/2 rounded-full bg-white/50 px-4 py-2 shadow-lg backdrop-blur transition hover:scale-110 hover:bg-white disabled:opacity-50 disabled:hover:scale-100 sm:left-2 md:left-4"
+                        className="absolute left-0 top-1/2 z-40 -translate-y-1/2 rounded-full cursor-pointer bg-white/50 border border-gray-300 px-4 py-2 shadow-lg backdrop-blur transition hover:scale-110 hover:bg-white disabled:opacity-50 disabled:hover:scale-100 sm:left-2 md:left-4"
                     >
                         ←
                     </button>
@@ -150,7 +150,7 @@ export const DesktopScrollGallery = () => {
                         onClick={goToNext}
                         disabled={isAnimating}
                         aria-label="Следующее фото"
-                        className="absolute right-0 top-1/2 z-40 -translate-y-1/2 rounded-full bg-white/50 px-4 py-2 shadow-lg backdrop-blur transition hover:scale-110 hover:bg-white disabled:opacity-50 disabled:hover:scale-100 sm:right-2 md:right-4"
+                        className="absolute right-0 top-1/2 z-40 -translate-y-1/2 rounded-full cursor-pointer bg-white/50 border border-gray-300 px-4 py-2 shadow-lg backdrop-blur transition hover:scale-110 hover:bg-white disabled:opacity-50 disabled:hover:scale-100 sm:right-2 md:right-4"
                     >
                         →
                     </button>

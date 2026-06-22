@@ -135,7 +135,7 @@
 @media (hover: hover) and (pointer: fine) {
     .font__nav__link--wide:hover .scale--hovered,
     .font__nav__link--slim:hover .scale--hovered {
-        transform: scale(1.2);
+        transform: scale(1.1);
     }
 }
 

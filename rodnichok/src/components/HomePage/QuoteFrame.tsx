@@ -4,7 +4,7 @@ export const QuoteFrame = () => (
     <div className={'Quote__frame'}>
         <img
             src={HomeImg['Quote_frame']}
-            className={'w-full h-auto block'}
+            className={'w-full h-auto block pointer-events-none'}
             alt={'Quote_frame'}
         />
         <div className={'absolute Quote__image'}>

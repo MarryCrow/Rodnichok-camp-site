@@ -20,14 +20,14 @@ function HomeHeader() {
 
             <img
                 src = {hats['Hat_PC']}
-                className={'hidden md:block w-full h-[100vh] object-cover'}
+                className={'hidden md:block w-full h-[100vh] object-cover pointer-events-none'}
                 alt={'Home Header PC'}
 
             />
 
             <img
                 src = {hats['Hat_Mobile']}
-                className={'block md:hidden w-full h-[100vh] object-cover'}
+                className={'block md:hidden w-full h-[100vh] object-cover pointer-events-none'}
                 alt={'Home Header Mobile'}
             />
 

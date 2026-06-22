@@ -56,7 +56,7 @@ export const Location = () => {
                             className='w-[30vw] md:w-[7.2vw] rounded-2xl'
                         />
                         <p className='text-black text-center font-bold text-[3.5vw] md:text-[1.15vw]'>
-                            Южно-Уральская <br /> Железная Дорога
+                            Южно-Уральская <br /> железная дорога
                         </p>
                     </div>
                 </div>

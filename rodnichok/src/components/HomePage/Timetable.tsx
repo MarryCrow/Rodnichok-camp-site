@@ -22,8 +22,8 @@ export const TimetablePC = () => (
 export const TimetableMobile = () => (
     <section className={'my-7 '}>
         <div className="flex flex-col gap-3">
-            <h2 className='flex gap-7 comfortaa-700 text-[30px] Home__shift-base Home__shift-title leading-10'>
-                <Icon name='Calendar-check_icon' className='w-[17vw] h-auto text-themeGreen ml-10'/>
+            <h2 className='flex gap-7 comfortaa-700 text-[24px] Home__shift-base Home__shift-title leading-10'>
+                <Icon name='Calendar-check_icon' className='w-[14vw] h-auto text-themeGreen ml-10'/>
                 Расписание<br/>смен
             </h2>
             {shifts.map(shift => (

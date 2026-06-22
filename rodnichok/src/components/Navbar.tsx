@@ -10,6 +10,7 @@ import logo_Rodnichok_silhouette from '@/assets/img/Navbar/Logo-Rodnichok-silhou
 import logo_Rzd_silhouette from '@/assets/img/Navbar/Partners_RZD-silhouette.png'
 import menu_closed from '@/assets/img/Navbar/menu_icon-closed.png'
 import menu_opened from '@/assets/img/Navbar/menu_icon-opened.png'
+import {SecretModule} from "@/components/SecretModule.tsx";
 
 function Navbar() {
 
@@ -23,6 +24,8 @@ function Navbar() {
     const isMobile = useMediaQuery("(max-width: 768px)");
 
     const [isOpen, setIsOpen] = useState(false);
+    const [isMobileNavHidden, setIsMobileNavHidden] = useState(false);
+    const [isSecretModuleOpen, setIsSecretModuleOpen] = useState(false);
 
     useEffect(() => {
         setIsOpen(false)
@@ -33,6 +36,51 @@ function Navbar() {
             setIsOpen(false);
         }
     }, [isMobile]);
+
+    useEffect(() => {
+        if (!isMobile) {
+            setIsMobileNavHidden(false);
+            return;
+        }
+
+        let lastScrollY = window.scrollY;
+
+        const handleScroll = () => {
+            const currentScrollY = window.scrollY;
+
+            // Если меню открыто — navbar не прячем
+            if (isOpen) {
+                setIsMobileNavHidden(false);
+                lastScrollY = currentScrollY;
+                return;
+            }
+
+            // Если почти в самом верху страницы — navbar всегда показываем
+            if (currentScrollY < 50) {
+                setIsMobileNavHidden(false);
+                lastScrollY = currentScrollY;
+                return;
+            }
+
+            // Скроллим вниз — прячем
+            if (currentScrollY > lastScrollY) {
+                setIsMobileNavHidden(true);
+            }
+
+            // Скроллим вверх — показываем
+            if (currentScrollY < lastScrollY) {
+                setIsMobileNavHidden(false);
+            }
+
+            lastScrollY = currentScrollY;
+        };
+
+        window.addEventListener("scroll", handleScroll, { passive: true });
+
+        return () => {
+            window.removeEventListener("scroll", handleScroll);
+        };
+    }, [isMobile, isOpen]);
 
     const closeMenu = () => setIsOpen(false);
 
@@ -52,13 +100,17 @@ function Navbar() {
         <>
             <nav className="nav hidden md:block md:h-[8vw] lg:h-[6vw] ">
                 <ul className="nav__list">
-                        <li className="nav__item">
+                    <button
+                        type="button"
+                        onClick={() => setIsSecretModuleOpen(true)}
+                        className="nav__item transition"
+                    >
                         <img
                             src={navConfig.leftLogo.src}
                             className={'nav__logo'}
                             alt={navConfig.leftLogo.alt}
                         />
-                    </li>
+                    </button>
 
                     {navConfig.links.map(({path, label}) => (
                         <li key={path} className='nav__item'>
@@ -84,27 +136,30 @@ function Navbar() {
                 </ul>
             </nav>
 
-            <nav className="nav flex md:hidden h-[80px] px-4">
-                <img
-                    src={navConfig.leftLogo.src}
-                    className={'nav__logo mt-1 pt-1'}
-                    alt={navConfig.leftLogo.alt}
-                />
+            <nav
+                className={[
+                    "nav flex md:hidden h-[80px] px-4",
+                    "transition-transform duration-350 ease-out",
+                    isMobileNavHidden ? "-translate-y-[110%]" : "translate-y-0",
+                ].join(" ")}
+            >
+                <button
+                    type="button"
+                    onClick={() => setIsSecretModuleOpen(true)}
+                    className="nav__item transition"
+                >
+                    <img
+                        src={navConfig.leftLogo.src}
+                        className={'nav__logo'}
+                        alt={navConfig.leftLogo.alt}
+                    />
+                </button>
 
                 <img
                     src={navConfig.rightLogo.src}
                     className={'nav__logo mt-1'}
                     alt={navConfig.rightLogo.alt}
                 />
-
-                {/*<button*/}
-                {/*    onClick={() => setIsOpen(prev => !prev)}*/}
-                {/*    className="ml-auto mr-3 mb-1 nav_button"*/}
-                {/*>*/}
-                {/*    <span className="scale--active">*/}
-                {/*        {isOpen ? <img src={menu_opened} alt="menu opened" className="h-10 right-0"/> : <img src={menu_closed} alt="menu closed" className="h-10"/>}*/}
-                {/*    </span>*/}
-                {/*</button>*/}
 
                 <button
                     onClick={() => setIsOpen(prev => !prev)}
@@ -166,6 +221,11 @@ function Navbar() {
                     </ul>
                 </div>
             </div>
+
+            <SecretModule
+                isOpen={isSecretModuleOpen}
+                onClose={() => setIsSecretModuleOpen(false)}
+            />
         </>
     )
 }

@@ -5,7 +5,7 @@ import path from 'path'
 import svgr from 'vite-plugin-svgr'
 
 export default defineConfig({
-    base: "/Rodnichok-camp-site/",
+    base: "/",
     plugins: [react(), tailwindcss(), svgr()],
     resolve: {
         alias: {

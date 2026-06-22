@@ -14,6 +14,7 @@ dist-ssr
 *.local
 
 public/gallery/
+public/__backup_gallery_before_normalize/
 
 # Editor directories and files
 .vscode/*
